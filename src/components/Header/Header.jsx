@@ -35,10 +35,6 @@ const _Header = observer(() => {
     setIsModalEntryOpen(false);
   };
 
-  let url =
-    window.location.href === "http://localhost:3000/account" ||
-    window.location.href === "localhost:3000/account";
-
   return (
     <>
       <_Modal
@@ -76,7 +72,7 @@ const _Header = observer(() => {
                 <p className={classes.header__name}>
                   Здравствуйте, {autorizedUser.user.nickname}
                 </p>
-
+                {}
                 <Link to="/account">
                   <_Button title="Личный кабинет" />
                 </Link>

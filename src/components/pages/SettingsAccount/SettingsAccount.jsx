@@ -12,12 +12,15 @@ import classes from "./SettingsAccount.module.css";
 
 const SettingsAccount = observer(() => {
   const autorized = autorizedUser.user;
-  const [email, setEmail] = useState(autorized.email);
-  const [phone, setPhone] = useState(autorized.phone);
-  const [intro, setIntro] = useState(autorized.intro);
   const [message, setMessage] = useState("");
   const [isModalEntryOpen, setIsModalEntryOpen] = useState(false);
   const [disabled, setDisabled] = useState(true);
+  const [newData, setNewData] = useState({
+    email: autorized.email,
+    phone: autorized.phone,
+    intro: autorized.phone,
+    status: 200,
+  });
 
   const clickChangeData = () => {
     setDisabled(false);
@@ -25,13 +28,6 @@ const SettingsAccount = observer(() => {
 
   const handleCancelEntry = () => {
     setIsModalEntryOpen(false);
-  };
-
-  let newData = {
-    email: email,
-    phone: phone,
-    intro: intro,
-    status: 200,
   };
 
   const onSubmitData = (e) => {
@@ -60,7 +56,7 @@ const SettingsAccount = observer(() => {
             disabled={disabled}
             placeholder="введите новый email"
             defaultValue={autorized.email}
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={(e) => setNewData({ ...newData, email: e.target.value })}
             className={classes.settigs__input}
           />
         </div>
@@ -70,7 +66,7 @@ const SettingsAccount = observer(() => {
             disabled={disabled}
             placeholder="введите новый телефон"
             defaultValue={autorized.phone}
-            onChange={(e) => setPhone(e.target.value)}
+            onChange={(e) => setNewData({ ...newData, phone: e.target.value })}
             className={classes.settigs__input}
           />
         </div>
@@ -80,7 +76,7 @@ const SettingsAccount = observer(() => {
             disabled={disabled}
             placeholder="Коорото о себе"
             defaultValue={autorized.intro}
-            onChange={(e) => setIntro(e.target.value)}
+            onChange={(e) => setNewData({ ...newData, intro: e.target.value })}
             className={classes.settigs__input}
           />
         </div>

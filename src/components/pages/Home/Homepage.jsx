@@ -8,13 +8,13 @@ import { observer } from "mobx-react-lite";
 
 import classes from "./Home.module.css";
 
-const Homepage = observer(() => {
-  const handleClick = () => {
-    hotelsList(hotelsJson).then((data) => {
-      hotels.addHotels(data);
-    });
-  };
+const handleClick = () => {
+  hotelsList(hotelsJson).then((data) => {
+    hotels.addHotels(data);
+  });
+};
 
+const Homepage = observer(() => {
   return (
     <div className={classes.home}>
       <h1 className={classes.home__header}>Подбор отеля по вашим параметрам</h1>
