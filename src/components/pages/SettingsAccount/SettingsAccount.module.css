@@ -1,0 +1,13 @@
+.settigs__input {
+  width: 200px;
+}
+
+.data {
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  width: 391px;
+  height: 300px;
+  /* border: 1px solid black; */
+  justify-content: space-around;
+}

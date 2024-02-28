@@ -1,0 +1,24 @@
+.personal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.personal__item {
+  /* border: 1px solid black; */
+  margin: 20px;
+  padding: 30px;
+  width: 1280px;
+  box-shadow: 2px 6px 19px -3px rgba(0, 0, 0, 1);
+  border-radius: 15px;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.personal__item_text {
+  font-size: 14px;
+  color: red;
+}
